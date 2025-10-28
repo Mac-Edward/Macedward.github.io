@@ -1,167 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Silicon Valley Premier M&A Advisor | Unlock Market Opportunities</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
-  /* Global Styles */
+  :root {
+    --primary: #007acc;
+    --secondary: #00bfff;
+    --bg-light: #f9fafc;
+    --text-dark: #111;
+    --glass-bg: rgba(255,255,255,0.6);
+    --shadow: 0 8px 25px rgba(0,0,0,0.08);
+  }
+
   html { scroll-behavior: smooth; }
   body {
-    font-family: 'Inter', sans-serif;
     margin: 0;
-    padding: 0;
-    color: #111;
-    background: #fff;
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+    background: var(--bg-light);
     line-height: 1.6;
     overflow-x: hidden;
   }
-  a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
-  a:hover { color: #007acc; }
-  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; transition: color 0.3s; }
+  a:hover { color: var(--primary); }
 
   /* Navigation */
   nav {
-    position: sticky;
-    top: 0;
-    background: rgba(255,255,255,0.95);
-    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
     z-index: 1000;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
   }
-  nav.scrolled { background: rgba(255,255,255,1); }
+  nav.scrolled {
+    background: #fff;
+  }
   nav ul {
     display: flex;
     justify-content: center;
-    list-style: none;
-    margin: 0;
-    padding: 1rem 0;
     gap: 2rem;
+    padding: 1rem 0;
+    margin: 0;
+    list-style: none;
   }
   nav ul li { font-weight: 600; }
-  nav ul li a:hover { color: #00bfff; }
 
-  /* Hero Section */
+  /* Hero */
   header.hero {
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    min-height: 90vh;
-    background: url('https://images.unsplash.com/photo-1581091215361-460da5090ff6?auto=format&fit=crop&w=1950&q=80') center/cover fixed no-repeat;
-    color: #fff;
-    padding: 0 1rem;
+    background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%);
     position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 0 1rem;
   }
-  header.hero::after {
-    content:'';
-    position:absolute;top:0;left:0;width:100%;height:100%;
-    background: rgba(0,51,102,0.35); /* lighter overlay for visibility */
-    z-index: 1;
+  .hero-content {
+    max-width: 800px;
+    z-index: 2;
   }
-  header.hero > * { position: relative; z-index: 2; color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
   header.hero h1 {
     font-size: 3rem;
     font-weight: 700;
-    margin: 0;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1s forwards;
+  }
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
   }
   header.hero p {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     margin-top: 1rem;
-    font-style: italic;
-    font-weight: 400;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1s forwards 0.3s;
   }
-  .btn-contact {
-    display: inline-block;
+  .btn-primary {
     margin-top: 2rem;
-    background: linear-gradient(90deg,#007acc,#00bfff);
+    background: linear-gradient(90deg,var(--primary),var(--secondary));
     color: #fff;
     padding: 1rem 2rem;
-    font-weight: 600;
     border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,123,204,0.4);
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0,123,204,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1s forwards 0.6s;
   }
-  .btn-contact:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,123,204,0.6); }
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,123,204,0.5);
+  }
 
-  /* Sections */
+  /* Fade-in sections */
   section {
-    padding: 6rem 1rem;
     max-width: 1000px;
     margin: 0 auto;
+    padding: 6rem 1rem;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease-out;
+  }
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
   section h2 {
     font-size: 2rem;
     font-weight: 700;
+    background: linear-gradient(90deg,var(--primary),var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-bottom: 1.5rem;
-    position: relative;
+    text-align: center;
+  }
+  section p, section li {
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Cards */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  .card {
+    background: var(--glass-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    backdrop-filter: blur(10px);
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  }
+
+  /* Counters */
+  .stats {
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    justify-content: space-around;
+    margin-top: 4rem;
+    text-align: center;
   }
-  section h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background: linear-gradient(90deg,#007acc,#00bfff);
-    margin-left: auto;
-    border-radius: 2px;
-  }
-  section p, section li { font-size: 1.05rem; margin-bottom: 1rem; }
-
-  /* Fix double bullets */
-  ul, ol {
-    margin-left: 1.5rem;
-    padding-left: 0;
-    list-style: none;
-  }
-  li {
-    margin-bottom: 0.75rem;
-    position: relative;
-    padding-left: 1rem;
-  }
-  li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: #007acc;
-    font-weight: bold;
+  .counter {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
   }
 
-  /* CTA Section */
+  /* CTA */
   .cta {
-    background: linear-gradient(135deg,#007acc,#00bfff);
-    color: #fff;
     text-align: center;
     padding: 6rem 1rem;
-    clip-path: polygon(0 0,100% 0,100% 100%,0 90%);
-    position: relative;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: #fff;
   }
-  .cta h2 { font-size: 2rem; margin-bottom: 1rem; }
-  .cta p { font-size: 1.2rem; margin-bottom: 2rem; }
+  .cta h2 { font-size: 2rem; }
+  .cta p { font-size: 1.2rem; margin-top: 1rem; }
+  .cta .btn-primary { background: #fff; color: var(--primary); }
 
   /* Footer */
   footer {
     text-align: center;
     padding: 2rem 1rem;
-    background: #f8fafc;
-    color: #666;
-    font-size: 0.9rem;
+    color: #777;
+    background: #fff;
   }
 
-  /* Responsive */
-  @media(max-width:768px){
+  @media (max-width: 768px) {
     header.hero h1 { font-size: 2rem; }
     header.hero p { font-size: 1rem; }
-    nav ul { flex-direction: column; gap: 1rem; }
+    .stats { flex-direction: column; gap: 2rem; }
   }
 </style>
 </head>
+
 <body>
 
-<!-- Navigation -->
 <nav id="nav">
   <ul>
     <li><a href="#why-work">Why Work With Me</a></li>
@@ -172,59 +205,86 @@
   </ul>
 </nav>
 
-<!-- Hero -->
 <header class="hero">
-  <h1>Unlock Market Opportunities & Maximize Your Business Value</h1>
-  <p>Silicon Valley’s Premier M&A Advisor</p>
-  <a href="#contact" class="btn-contact">Schedule a Confidential Consultation</a>
+  <div class="hero-content">
+    <h1>Unlock Market Opportunities & Maximize Your Business Value</h1>
+    <p>Silicon Valley’s Premier M&A Advisory Platform</p>
+    <a href="#contact" class="btn-primary">Schedule a Confidential Consultation</a>
+  </div>
 </header>
 
-<!-- Sections -->
 <main>
   <section id="why-work">
-    <h2>Why Work With Me? Access, Network, and Precision.</h2>
-    <p><strong>Pre-Market Deal Flow:</strong> Gain early visibility into off-market opportunities through my trusted network nationwide, acting before listings go public. One of the biggest challenges in M&A is competition. Many businesses are sold before they ever hit the public market. Thanks to hundreds of trusted contacts with M&A advisors and business brokers across the United States, I maintain a one-degree-of-separation network that gives my clients early visibility into these pre-market opportunities. This means buyers can act before listings become widely available, capturing deals with less competition, favorable terms, and greater potential for strategic value creation</p>
-    <p><strong>Tailored Acquisition Matching:</strong> I filter thousands of listings to match your criteria, saving time and ensuring every opportunity is actionable. Not all businesses are right for every buyer. I filter thousands of listings according to your acquisition provisions, strategic goals, and risk appetite. By matching targets to your precise criteria, I save you weeks—or even months—of wasted time and ensure that every opportunity presented is actionable and relevant. For business owners, this means connecting with buyers whose intentions align with your long-term goals, maximizing the potential for a smooth and lucrative transaction.</p>
-    <p><strong>Comprehensive Market Intelligence:</strong> Evaluate businesses by industry context, competitive landscape, and growth potential to guide your decisions. My nightly research doesn’t just stop at listing aggregation. Each business is evaluated in the context of its industry, competitive landscape, growth potential, and financial health. This means that I bring more than just access—I bring insight. My clients receive actionable intelligence that informs negotiation strategies, valuation benchmarks, and timing, helping them make informed, confident decisions.</p>
-    <p><strong>A Network that Works for You:</strong> National connections provide direct lines to decision-makers often before opportunities hit the market. Relationships matter in M&A. Over the years, I’ve cultivated a national network of M&A advisors, brokers, private equity professionals, and strategic investors. This network provides unparalleled deal flow, insider knowledge, and a diverse pool of potential partners or buyers. Whether your goal is to buy, sell, or explore strategic partnerships, my connections give you a direct line to decision-makers and opportunity creators, often before they are visible on any listing service.</p>
-    <p><strong>Confidentiality and Discretion:</strong> Every engagement is handled with professionalism, protecting your reputation while unlocking opportunities. We understand that M&A is not just about numbers—it’s about people and reputation. Every engagement is handled with the utmost confidentiality, whether you are exploring exit options or pursuing strategic acquisitions. My clients benefit from a discreet, professional process designed to protect sensitive information while opening doors to the best opportunities</p>
+    <h2>Why Work With Me</h2>
+    <p>Gain access to pre-market deal flow, proprietary sourcing, and data-driven insights that move you ahead of competitors. My network of M&A advisors and brokers nationwide provides early access to exclusive opportunities—helping you act before deals go public.</p>
+    
+    <div class="stats">
+      <div>
+        <div class="counter" data-target="3000">0</div>
+        <p>Listings Analyzed Weekly</p>
+      </div>
+      <div>
+        <div class="counter" data-target="500">0</div>
+        <p>Trusted Network Contacts</p>
+      </div>
+      <div>
+        <div class="counter" data-target="100">0</div>
+        <p>Pre-Market Deals Sourced</p>
+      </div>
+    </div>
   </section>
 
   <section id="buyers">
-    <h2>For Buyers: Capture Value Before the Market Does</h2>
-    <ul>
-      <li>Early access to exclusive opportunities.</li>
-      <li>Precision-targeted listings by size, industry, geography, and acquisition structure.</li>
-      <li>Proprietary strategic insights on potential and alignment.</li>
-      <li>Negotiation leverage through timing and information advantage.</li>
-    </ul>
+    <h2>For Buyers</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Exclusive Deal Access</h3>
+        <p>Identify and acquire businesses before competitors even know they’re available.</p>
+      </div>
+      <div class="card">
+        <h3>Strategic Matching</h3>
+        <p>Get only opportunities that fit your acquisition size, structure, and sector criteria.</p>
+      </div>
+      <div class="card">
+        <h3>Intelligence Advantage</h3>
+        <p>Leverage proprietary insights to strengthen negotiation and valuation strategies.</p>
+      </div>
+    </div>
   </section>
 
   <section id="sellers">
-    <h2>For Sellers: Maximize Your Exit and Protect Your Interests</h2>
-    <ul>
-      <li><strong>Targeted buyer matching</strong> to align with strategic goals.  We identify buyers who meet your criteria and have the financial capability and strategic interest to complete the transaction.</li>
-      <li><strong>Expanded national reach</strong> to pre-qualified buyers.  Our national network exposes your business to hundreds of qualified, pre-vetted buyers who are actively looking for opportunities like yours.</li>
-      <li><strong>Confidential marketing</strong> to preserve operations and morale. Your business is presented to buyers discretely, preserving operational continuity, employee morale, and customer confidence.</li>
-      <li><strong>Data-driven insights</strong> to negotiate the highest value. With data-driven insights and a deep understanding of buyer motivations, I help negotiate terms that achieve the highest possible value while minimizing risk.</li>
-    </ul>
+    <h2>For Sellers</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Qualified Buyer Access</h3>
+        <p>Connect with buyers who have both strategic interest and financial capability.</p>
+      </div>
+      <div class="card">
+        <h3>Confidential Marketing</h3>
+        <p>Promote your business discretely, preserving operations and employee confidence.</p>
+      </div>
+      <div class="card">
+        <h3>Data-Driven Valuation</h3>
+        <p>Leverage analytics to negotiate optimal value and favorable deal terms.</p>
+      </div>
+    </div>
   </section>
 
   <section id="process">
     <h2>How My Process Works</h2>
     <ol>
-      <li><strong>Discovery & Criteria Assessment:</strong> Every engagement begins with a deep dive into your objectives. Buyers and sellers alike benefit from a tailored strategy, identifying acquisition parameters, growth targets, and transaction goals.</li>
-      <li><strong>Data-Driven Sourcing:</strong>  We leverage my 14-hour nightly research process to gather thousands of business listings and contacts, identifying only the most relevant opportunities or buyers.</li>
-      <li><strong>Proprietary Filtering:</strong> Using acquisition provisions, strategic alignment, and market intelligence, I distill large datasets into actionable insights.</li>
-      <li><strong>Confidential Outreach:</strong> We connect buyers and sellers in a professional, discreet manner that respects confidentiality while maximizing deal potential.</li>
-      <li><strong>Negotiation & Closing Support:</strong> While our primary focus is sourcing and matching, we also provide strategic guidance during the negotiation process, ensuring that your objectives are met with favorable terms and minimized risk.</li>
+      <li>Discovery & Criteria Assessment</li>
+      <li>Data-Driven Sourcing</li>
+      <li>Proprietary Filtering</li>
+      <li>Confidential Outreach</li>
+      <li>Negotiation & Closing Support</li>
     </ol>
   </section>
 
   <section class="cta">
     <h2>Ready to Unlock Your Next Opportunity?</h2>
-    <p>Access pre-market deals, maximize your business value, and gain insights that put you ahead of the competition.</p>
-    <a href="#contact" class="btn-contact">Schedule a Confidential Consultation</a>
+    <p>Access pre-market deals, maximize your business value, and gain insights that keep you ahead.</p>
+    <a href="#contact" class="btn-primary">Schedule a Consultation</a>
   </section>
 
   <section id="contact">
@@ -239,19 +299,49 @@
 </main>
 
 <footer>
-  &copy; 2024 Your Company Name. All rights reserved.
+  &copy; 2025 Your Company Name. All rights reserved.
 </footer>
 
 <script>
-  // Change nav background on scroll
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    if(window.scrollY > 50){
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
+  // Scroll effects
+  const sections = document.querySelectorAll("section");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add("visible");
+    });
+  }, { threshold: 0.15 });
+  sections.forEach(s => observer.observe(s));
+
+  // Navbar scroll background
+  const nav = document.getElementById("nav");
+  window.addEventListener("scroll", () => {
+    nav.classList.toggle("scrolled", window.scrollY > 50);
   });
+
+  // Counter animation
+  const counters = document.querySelectorAll('.counter');
+  const speed = 200;
+  const startCounter = (counter) => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
+      const inc = target / speed;
+      if(count < target) {
+        counter.innerText = Math.ceil(count + inc);
+        setTimeout(updateCount, 15);
+      } else counter.innerText = target;
+    };
+    updateCount();
+  };
+  const counterObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        startCounter(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  counters.forEach(c => counterObserver.observe(c));
 </script>
 
 </body>
