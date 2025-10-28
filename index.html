@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Silicon Valley Premier M&A Advisor | Unlocking Market Opportunities</title>
+<title>Silicon Valley Premier M&A Advisor | Unlock Pre-Market Opportunities</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   /* Global Styles */
@@ -57,33 +57,40 @@
   }
   header.hero::after {
     content:'';
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
+    position:absolute;top:0;left:0;width:100%;height:100%;
     background: rgba(0,51,102,0.55);
   }
   header.hero > * { position: relative; z-index: 2; }
-
-  /* Hero animations */
-  header.hero h1,
-  header.hero p,
-  header.hero .btn-contact {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
+  header.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0;
+    max-width: 900px;
+    opacity: 0; transform: translateY(50px);
+    transition: all 1s ease-out;
   }
-  header.hero h1.visible,
-  header.hero p.visible,
-  header.hero .btn-contact.visible {
-    opacity: 1;
-    transform: translateY(0);
+  header.hero p {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    font-style: italic;
+    font-weight: 400;
+    opacity: 0; transform: translateY(50px);
+    transition: all 1s ease-out 0.2s;
   }
-  .btn-contact:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0,123,204,0.6);
+  .btn-contact {
+    display: inline-block;
+    margin-top: 2rem;
+    background: linear-gradient(90deg,#007acc,#00bfff);
+    color: #fff;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,123,204,0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0; transform: translateY(50px);
+    transition: all 1s ease-out 0.4s;
   }
+  .btn-contact:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,123,204,0.6); }
 
   /* Sections */
   section {
@@ -95,11 +102,11 @@
     transition: all 1s ease-out;
   }
   section.visible { opacity:1; transform: translateY(0); }
-
   section h2 {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
+    position: relative;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -120,7 +127,6 @@
     transition: transform 0.3s, color 0.3s;
     position: relative;
     padding-left: 1rem;
-    list-style: none;
   }
   li::before {
     content: '•';
@@ -130,7 +136,10 @@
     font-weight: bold;
     transition: transform 0.3s;
   }
-  li:hover { transform: translateX(5px); color: #007acc; }
+  li:hover {
+    transform: translateX(5px);
+    color: #007acc;
+  }
 
   /* CTA Section */
   .cta {
@@ -166,83 +175,66 @@
 <!-- Navigation -->
 <nav id="nav">
   <ul>
-    <li><a href="#why-work">Why Work With Us</a></li>
+    <li><a href="#why-work">Why Work With Me</a></li>
     <li><a href="#buyers">Buyers</a></li>
     <li><a href="#sellers">Sellers</a></li>
     <li><a href="#process">Process</a></li>
-    <li><a href="#timing-access">Timing and Access</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
 <!-- Hero -->
 <header class="hero">
-  <h1>Unlock Market Opportunities & Maximize Your Business Value</h1>
+  <h1>Unlock Pre-Market Opportunities & Maximize Your Business Value</h1>
   <p>Silicon Valley’s Premier M&A Advisor</p>
   <a href="#contact" class="btn-contact">Schedule a Confidential Consultation</a>
 </header>
 
-<!-- Main Sections -->
+<!-- Sections -->
 <main>
   <section id="why-work">
-    <h2>Why Work With Us? Access, Network, and Precision.</h2>
-    <p><strong>Pre-Market Deal Flow:</strong> Gain early visibility into off-market opportunities through my trusted nationwide network, acting before listings go public...</p>
-    <p><strong>Tailored Acquisition Matching:</strong> Filter thousands of listings to match your criteria...</p>
-    <p><strong>Comprehensive Market Intelligence:</strong> Evaluate businesses by industry context, competitive landscape, and growth potential...</p>
+    <h2>Why Work With Me? Access, Network, and Precision.</h2>
+    <p><strong>Pre-Market Deal Flow:</strong> Gain early visibility into off-market opportunities through my trusted network nationwide, acting before listings go public.</p>
+    <p><strong>Tailored Acquisition Matching:</strong> I filter thousands of listings to match your criteria, saving time and ensuring every opportunity is actionable.</p>
+    <p><strong>Comprehensive Market Intelligence:</strong> Evaluate businesses by industry context, competitive landscape, and growth potential to guide your decisions.</p>
     <p><strong>A Network that Works for You:</strong> National connections provide direct lines to decision-makers often before opportunities hit the market.</p>
-    <p><strong>Confidentiality and Discretion:</strong> Every engagement is handled professionally, protecting your reputation.</p>
+    <p><strong>Confidentiality and Discretion:</strong> Every engagement is handled with professionalism, protecting your reputation while unlocking opportunities.</p>
   </section>
 
   <section id="buyers">
     <h2>For Buyers: Capture Value Before the Market Does</h2>
     <ul>
-      <li><strong>Early access</strong> to exclusive opportunities.</li>
-      <li><strong>Precision-targeted listings</strong> by size, industry, geography, and acquisition structure.</li>
-      <li><strong>Proprietary strategic insights</strong> on potential and alignment.</li>
-      <li><strong>Negotiation leverage</strong> through timing and information advantage.</li>
+      <li>Early access to exclusive opportunities.</li>
+      <li>Precision-targeted listings by size, industry, geography, and acquisition structure.</li>
+      <li>Proprietary strategic insights on potential and alignment.</li>
+      <li>Negotiation leverage through timing and information advantage.</li>
     </ul>
-    <p>By leveraging our system, buyers have successfully acquired businesses that deliver strategic value, synergies, and long-term growth—all without competing in crowded public markets.</p>
   </section>
 
   <section id="sellers">
     <h2>For Sellers: Maximize Your Exit and Protect Your Interests</h2>
     <ul>
-      <li><strong>Targeted buyer matching</strong> to align with strategic goals.</li>
-      <li><strong>Expanded national reach</strong> to pre-qualified buyers.</li>
-      <li><strong>Confidential marketing</strong> to preserve operations and morale.</li>
-      <li><strong>Data-driven insights</strong> to negotiate the highest value.</li>
+      <li>Targeted buyer matching to align with strategic goals.</li>
+      <li>Expanded national reach to pre-qualified buyers.</li>
+      <li>Confidential marketing to preserve operations and morale.</li>
+      <li>Data-driven insights to negotiate the highest value.</li>
     </ul>
-  </section>
-
-  <section id="track-record">
-    <h2>A Proven Track Record of Results</h2>
-    <p>Our unique approach has delivered tangible results for buyers and sellers alike:</p>
-    <ol>
-      <li>Facilitated acquisitions for private equity firms and holding companies across diverse industries.</li>
-      <li>Helped business owners achieve premium valuations by strategically positioning their companies with the right buyers.</li>
-      <li>Provided actionable insights and market intelligence for high-value acquisitions efficiently.</li>
-    </ol>
   </section>
 
   <section id="process">
     <h2>How My Process Works</h2>
     <ol>
-      <li><strong>Discovery & Criteria Assessment:</strong> Deep dive into objectives to create tailored strategies.</li>
-      <li><strong>Data-Driven Sourcing:</strong> Gather thousands of listings nightly to identify relevant opportunities.</li>
-      <li><strong>Proprietary Filtering:</strong> Distill large datasets into actionable insights.</li>
-      <li><strong>Confidential Outreach:</strong> Connect buyers and sellers professionally and discreetly.</li>
-      <li><strong>Negotiation & Closing Support:</strong> Provide guidance during negotiations to achieve favorable outcomes.</li>
+      <li>Discovery & Criteria Assessment</li>
+      <li>Data-Driven Sourcing</li>
+      <li>Proprietary Filtering</li>
+      <li>Confidential Outreach</li>
+      <li>Negotiation & Closing Support</li>
     </ol>
-  </section>
-
-  <section id="timing-access">
-    <h2>Why Timing and Access Matter More Than Ever</h2>
-    <p>Being first—and well-informed—matters in today’s competitive M&A environment. Our services provide both buyers and sellers with the insight, timing, and access required to succeed.</p>
   </section>
 
   <section class="cta">
     <h2>Ready to Unlock Your Next Opportunity?</h2>
-    <p>Access pre-market deals, maximize business value, and gain insights that put you ahead of the competition.</p>
+    <p>Access pre-market deals, maximize your business value, and gain insights that put you ahead of the competition.</p>
     <a href="#contact" class="btn-contact">Schedule a Confidential Consultation</a>
   </section>
 
@@ -262,22 +254,25 @@
 </footer>
 
 <script>
-  // Hero fade-in on scroll
-  const heroElements = document.querySelectorAll('header.hero h1, header.hero p, header.hero .btn-contact');
-  const heroObserver = new IntersectionObserver(entries => {
+  // Fade-in sections on scroll
+  const sections = document.querySelectorAll('section, header.hero h1, header.hero p, .btn-contact');
+  const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if(entry.isIntersecting){
         entry.target.classList.add('visible');
-        heroObserver.unobserve(entry.target);
       }
     });
   }, { threshold: 0.1 });
-  heroElements.forEach(el => heroObserver.observe(el));
+  sections.forEach(section => observer.observe(section));
 
-  // Nav background on scroll
+  // Change nav background on scroll
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 50);
+    if(window.scrollY > 50){
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
   });
 </script>
 
