@@ -58,24 +58,20 @@
   header.hero::after {
     content:'';
     position:absolute;top:0;left:0;width:100%;height:100%;
-    background: rgba(0,51,102,0.55);
+    background: rgba(0,51,102,0.35); /* lighter overlay for visibility */
+    z-index: 1;
   }
-  header.hero > * { position: relative; z-index: 2; }
+  header.hero > * { position: relative; z-index: 2; color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
   header.hero h1 {
     font-size: 3rem;
     font-weight: 700;
     margin: 0;
-    max-width: 900px;
-    opacity: 0; transform: translateY(50px);
-    transition: all 1s ease-out;
   }
   header.hero p {
     font-size: 1.25rem;
     margin-top: 1rem;
     font-style: italic;
     font-weight: 400;
-    opacity: 0; transform: translateY(50px);
-    transition: all 1s ease-out 0.2s;
   }
   .btn-contact {
     display: inline-block;
@@ -86,8 +82,6 @@
     font-weight: 600;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0,123,204,0.4);
-    opacity: 0; transform: translateY(50px);
-    transition: all 1s ease-out 0.4s;
   }
   .btn-contact:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,123,204,0.6); }
 
@@ -96,11 +90,7 @@
     padding: 6rem 1rem;
     max-width: 1000px;
     margin: 0 auto;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 1s ease-out;
   }
-  section.visible { opacity:1; transform: translateY(0); }
   section h2 {
     font-size: 2rem;
     font-weight: 700;
@@ -125,11 +115,10 @@
   ul, ol {
     margin-left: 1.5rem;
     padding-left: 0;
-    list-style: none; /* remove default bullets */
+    list-style: none;
   }
   li {
     margin-bottom: 0.75rem;
-    transition: transform 0.3s, color 0.3s;
     position: relative;
     padding-left: 1rem;
   }
@@ -139,11 +128,6 @@
     left: 0;
     color: #007acc;
     font-weight: bold;
-    transition: transform 0.3s;
-  }
-  li:hover {
-    transform: translateX(5px);
-    color: #007acc;
   }
 
   /* CTA Section */
@@ -259,17 +243,6 @@
 </footer>
 
 <script>
-  // Fade-in sections on scroll
-  const sections = document.querySelectorAll('section, header.hero h1, header.hero p, .btn-contact');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
-  sections.forEach(section => observer.observe(section));
-
   // Change nav background on scroll
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
