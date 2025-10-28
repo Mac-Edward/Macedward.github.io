@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buyer Acquisition Services</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 40px 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+
+  h1 {
+    color: #0e37a2;
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  h2 {
+    color: #262626;
+    font-size: 20px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #0e37a2;
+    padding-bottom: 5px;
+  }
+
+  p {
+    margin: 10px 0 20px 0;
+    line-height: 1.6;
+  }
+
+  ul {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+
+  li {
+    margin-bottom: 10px;
+  }
+
+  .highlight {
+    color: #0e37a2;
+    font-weight: bold;
+  }
+
+  .cta {
+    display: block;
+    margin-top: 30px;
+    padding: 15px 25px;
+    background: #0e37a2;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 6px;
+    font-weight: bold;
+  }
+
+  .footer {
+    margin-top: 40px;
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Buyer Acquisition Services – M&A & Business Acquisitions</h1>
+
+  <p>As a dedicated M&A advisor, I provide potential buyers with fast, accurate, and organized access to thousands of business listings across the USA. My system ensures that you see the most up-to-date opportunities, saving you time while maximizing deal potential.</p>
+
+  <h2>What I Offer</h2>
+  <ul>
+    <li><span class="highlight">Thousands of business listings:</span> Access a comprehensive database of businesses available for acquisition, organized for easy filtering by industry, location, size, and price.</li>
+    <li><span class="highlight">Daily updated data:</span> Listings are refreshed every 14 hours, ensuring buyers receive the most current opportunities available nationwide.</li>
+    <li><span class="highlight">Extensive M&A network:</span> Leverage hundreds of contacts with M&A advisors and brokers across the US to expand your search beyond the listings.</li>
+    <li><span class="highlight">Custom buyer searches:</span> I can perform targeted searches and directly connect buyers to sellers that meet their exact criteria.</li>
+    <li><span class="highlight">Streamlined deal sourcing:</span> Save time and reduce the guesswork in finding acquisition opportunities through a structured, data-driven approach.</li>
+  </ul>
+
+  <h2>How It Works</h2>
+  <p>1. Share your acquisition criteria (industry, location, size, investment range).<br>
+  2. Receive a curated list of relevant businesses, updated within the last 14 hours.<br>
+  3. Tap into my network of M&A brokers to identify additional off-market opportunities.<br>
+  4. Connect directly with sellers and negotiate deals with confidence.</p>
+
+  <a href="mailto:MacEdward.Paulino@gmail.com" class="cta">Contact Me to Start Your Search</a>
+
+  <div class="footer">
+    © 2025 Mac Edward R. Paulino | All rights reserved
+  </div>
+</div>
+
+</body>
+</html>
