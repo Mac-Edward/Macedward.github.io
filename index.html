@@ -1,273 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Silicon Valley M&A Advisory Services</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Silicon Valley Premier M&A Advisor | Unlock Pre-Market Opportunities</title>
 <style>
-    /* Base Styles */
-    body {
-        font-family: 'Arial', sans-serif;
-        line-height: 1.6;
-        margin: 0;
-        padding: 0;
-        color: #333;
-        background-color: #f7f8fa;
-        scroll-behavior: smooth; /* Smooth scrolling */
-    }
-
-    header {
-        background-color: #0b3d91;
-        color: #fff;
-        padding: 40px 20px;
-        text-align: center;
-    }
-
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f8fafc;
+    color: #222;
+    margin: 0; padding: 0;
+  }
+  header {
+    background: #003366;
+    color: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2.25rem;
+    font-weight: 700;
+  }
+  header p {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    font-style: italic;
+  }
+  main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  section {
+    margin-bottom: 3rem;
+  }
+  h2 {
+    color: #004080;
+    border-bottom: 3px solid #007acc;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
+  }
+  h3 {
+    color: #0059b3;
+    margin-top: 1.5rem;
+  }
+  ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+  }
+  ul li {
+    margin-bottom: 0.5rem;
+  }
+  .highlight {
+    color: #007acc;
+    font-weight: 600;
+  }
+  .cta {
+    background: #007acc;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 3rem;
+  }
+  .cta h2 {
+    margin-top: 0;
+    font-size: 1.8rem;
+  }
+  .cta p {
+    font-size: 1.1rem;
+    margin: 1rem 0 1.8rem;
+  }
+  .btn-contact {
+    background: #004080;
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+  }
+  .btn-contact:hover {
+    background: #00264d;
+  }
+  footer {
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+    padding: 1rem 0;
+    border-top: 1px solid #ddd;
+  }
+  @media (max-width: 600px) {
     header h1 {
-        margin: 0;
-        font-size: 2.2em;
+      font-size: 1.7rem;
     }
-
-    header p {
-        font-size: 1.1em;
-        margin-top: 10px;
+    main {
+      margin: 1rem;
     }
-
-    nav {
-        background: #fff;
-        position: sticky;
-        top: 0;
-        z-index: 999;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    nav ul {
-        display: flex;
-        justify-content: center;
-        list-style: none;
-        padding: 10px 0;
-        margin: 0;
-    }
-
-    nav ul li {
-        margin: 0 15px;
-    }
-
-    nav ul li a {
-        text-decoration: none;
-        color: #0b3d91;
-        font-weight: bold;
-        transition: color 0.3s;
-    }
-
-    nav ul li a:hover {
-        color: #ff6b00;
-    }
-
-    .container {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 40px 20px;
-    }
-
-    h2 {
-        color: #0b3d91;
-        margin-top: 40px;
-        opacity: 0;
-        transform: translateY(50px);
-        transition: all 0.8s ease;
-    }
-
-    h3 {
-        color: #0b3d91;
-    }
-
-    section {
-        margin-bottom: 50px;
-        opacity: 0;
-        transform: translateY(50px);
-        transition: all 0.8s ease;
-    }
-
-    section.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    ul {
-        list-style: none;
-        padding-left: 0;
-    }
-
-    ul li::before {
-        content: "✅";
-        margin-right: 10px;
-        color: #0b3d91;
-    }
-
-    .highlight {
-        background-color: #e1f0ff;
-        padding: 15px;
-        border-left: 5px solid #0b3d91;
-        margin: 20px 0;
-    }
-
-    .cta {
-        background-color: #0b3d91;
-        color: #fff;
-        text-align: center;
-        padding: 40px 20px;
-    }
-
-    .cta a {
-        display: inline-block;
-        margin-top: 20px;
-        padding: 15px 25px;
-        background-color: #ff6b00;
-        color: #fff;
-        text-decoration: none;
-        font-weight: bold;
-        border-radius: 5px;
-        transition: background 0.3s;
-    }
-
-    .cta a:hover {
-        background-color: #e65a00;
-    }
-
-    footer {
-        text-align: center;
-        padding: 20px;
-        font-size: 0.9em;
-        background-color: #f1f1f1;
-    }
-
-    @media (max-width: 768px) {
-        header h1 {
-            font-size: 1.8em;
-        }
-
-        nav ul {
-            flex-direction: column;
-        }
-
-        nav ul li {
-            margin: 10px 0;
-        }
-    }
+  }
 </style>
 </head>
 <body>
 
-<header id="home">
-    <h1>Unlock Pre-Market Opportunities and Maximize Your Business Value</h1>
-    <p>Silicon Valley’s Premier M&A Advisor – Connecting Buyers and Sellers to Exclusive Opportunities</p>
+<header>
+  <h1>Unlock Pre-Market Opportunities & Maximize Your Business Value</h1>
+  <p>Silicon Valley’s Premier M&A Advisor</p>
 </header>
 
-<nav>
-    <ul>
-        <li><a href="#buyers">For Buyers</a></li>
-        <li><a href="#sellers">For Sellers</a></li>
-        <li><a href="#process">Process</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
+<main>
 
-<div class="container">
-    <section id="intro">
-        <p>In the fast-paced world of mergers and acquisitions, timing, insight, and access define success. As a business owner or private equity investor, the difference between a good deal and a transformative one often comes down to information—and who you know. That’s where I step in. I am a Silicon Valley-based M&A Advisor, specializing in connecting business owners, private equity groups, holding companies, and strategic buyers to opportunities that aren’t just on the market—they’re often pre-market.</p>
-
-        <p>Over the last decade, I’ve honed a meticulous system to uncover thousands of businesses ripe for acquisition. Every night, I dedicate 14 hours to curating, filtering, and analyzing business listings nationwide, identifying acquisition targets that align perfectly with specific buyer criteria. My proprietary approach allows me to go far beyond surface-level data, delivering precision-targeted opportunities that match your strategic objectives. Whether you are a buyer seeking high-potential acquisitions or a business owner preparing to sell, I provide insights and access that significantly improve your outcomes.</p>
-    </section>
-
-    <section id="why-work">
-        <h2>Why Work With Me? Access, Network, and Precision</h2>
-        <h3>1. Pre-Market Deal Flow</h3>
-        <p>Many businesses are sold before they ever hit the public market. Thanks to hundreds of trusted contacts with M&A advisors and business brokers across the United States, I maintain a one-degree-of-separation network that gives my clients early visibility into pre-market opportunities. Buyers can act before listings become widely available, capturing deals with less competition, favorable terms, and greater potential for strategic value creation.</p>
-
-        <h3>2. Tailored Acquisition Matching</h3>
-        <p>I filter thousands of listings according to your acquisition provisions, strategic goals, and risk appetite. By matching targets to your precise criteria, I save you weeks—or even months—of wasted time and ensure that every opportunity presented is actionable and relevant.</p>
-
-        <h3>3. Comprehensive Market Intelligence</h3>
-        <p>Each business is evaluated in the context of its industry, competitive landscape, growth potential, and financial health. My clients receive actionable intelligence that informs negotiation strategies, valuation benchmarks, and timing, helping them make informed, confident decisions.</p>
-
-        <h3>4. A Network that Works for You</h3>
-        <p>Relationships matter in M&A. Over the years, I’ve cultivated a national network of M&A advisors, brokers, private equity professionals, and strategic investors, providing unparalleled deal flow and insider knowledge.</p>
-
-        <h3>5. Confidentiality and Discretion</h3>
-        <p>Every engagement is handled with the utmost confidentiality, whether you are exploring exit options or pursuing strategic acquisitions. My clients benefit from a discreet, professional process designed to protect sensitive information while opening doors to the best opportunities.</p>
-    </section>
-
-    <section id="buyers">
-        <h2>For Buyers: Capture Value Before the Market Does</h2>
-        <ul>
-            <li>Early Access: Opportunities before they reach conventional marketplaces.</li>
-            <li>Precision Targeting: Listings filtered by your specific buy-box criteria, including size, industry, geography, revenue, and acquisition structure.</li>
-            <li>Strategic Insights: Proprietary analysis to help you understand a company’s potential, risks, and alignment with your portfolio.</li>
-            <li>Negotiation Leverage: Information and timing that position you as a preferred buyer.</li>
-        </ul>
-    </section>
-
-    <section id="sellers">
-        <h2>For Sellers: Maximize Your Exit and Protect Your Interests</h2>
-        <ul>
-            <li>Targeted Buyer Matching: Identify buyers with financial capability and strategic interest.</li>
-            <li>Expanded Reach: Exposure to hundreds of qualified, pre-vetted buyers.</li>
-            <li>Confidential Marketing: Present your business discreetly.</li>
-            <li>Value Maximization: Achieve the highest possible value while minimizing risk.</li>
-        </ul>
-    </section>
-
-    <section id="process">
-        <h2>How My Process Works</h2>
-        <ol>
-            <li>Discovery & Criteria Assessment: Tailored strategy identifying acquisition parameters, growth targets, and transaction goals.</li>
-            <li>Data-Driven Sourcing: 14-hour nightly research gathering thousands of business listings and contacts.</li>
-            <li>Proprietary Filtering: Distill large datasets into actionable insights.</li>
-            <li>Confidential Outreach: Connect buyers and sellers professionally and discreetly.</li>
-            <li>Negotiation & Closing Support: Guidance to ensure favorable terms and minimized risk.</li>
-        </ol>
-    </section>
-
-    <section id="services" class="highlight">
-        <h2>Buy-Side Acquisition Sourcing & Deal Access Services</h2>
-        <ul>
-            <li>Access to verified off-market and brokered opportunities</li>
-            <li>Detailed teaser summaries tailored to your acquisition criteria</li>
-            <li>Introductions to sellers or representatives once qualified</li>
-            <li>Optional NDA management for deal confidentiality</li>
-            <li>Priority alerts when new opportunities match your mandate</li>
-        </ul>
-    </section>
-</div>
-
-<section class="cta" id="contact">
-    <h2>Ready to Access Exclusive M&A Opportunities?</h2>
-    <p>Your next acquisition, ideal buyer, or perfect exit opportunity may be waiting in the data we analyze nightly. Let us bring these opportunities to you with experience, precision, and unmatched access.</p>
-    <a href="mailto:your@email.com">Schedule a Confidential Consultation</a>
+<section>
+  <p>In the fast-paced world of mergers and acquisitions, timing, insight, and access define success. As a business owner or private equity investor, the difference between a good deal and a transformative one often comes down to information—and who you know. That’s where I step in.</p>
+  <p>I am a Silicon Valley-based M&A Advisor specializing in connecting business owners, private equity groups, holding companies, and strategic buyers to opportunities often not publicly available—pre-market deals. With over a decade of experience, I dedicate 14 hours nightly to curating and analyzing thousands of business listings nationwide, delivering precision-targeted acquisition opportunities aligned with your goals.</p>
 </section>
 
+<section>
+  <h2>Why Work With Me? Access, Network, and Precision.</h2>
+  <h3>1. Pre-Market Deal Flow</h3>
+  <p>Gain early visibility into off-market opportunities through my extensive trusted network of M&A advisors and brokers nationwide. Act before listings become public, facing less competition and securing deals with favorable terms.</p>
+
+  <h3>2. Tailored Acquisition Matching</h3>
+  <p>Your time is valuable. I filter thousands of listings to match your acquisition criteria, ensuring every opportunity is actionable and relevant. Sellers benefit from connecting with buyers aligned with their long-term goals.</p>
+
+  <h3>3. Comprehensive Market Intelligence</h3>
+  <p>Beyond listings, I evaluate businesses by industry context, competitive landscape, and growth potential. Receive actionable insights that guide negotiation, valuation, and timing decisions.</p>
+
+  <h3>4. A Network that Works for You</h3>
+  <p>My national network of professionals provides unparalleled deal flow, insider knowledge, and direct connections to decision-makers, often before opportunities hit public marketplaces.</p>
+
+  <h3>5. Confidentiality and Discretion</h3>
+  <p>Every engagement is handled with the utmost professionalism and confidentiality, protecting your reputation while unlocking valuable opportunities.</p>
+</section>
+
+<section>
+  <h2>For Buyers: Capture Value Before the Market Does</h2>
+  <ul>
+    <li><strong>Early Access:</strong> Exclusive opportunities before they reach conventional marketplaces.</li>
+    <li><strong>Precision Targeting:</strong> Listings filtered by your size, industry, geography, revenue, and acquisition structure.</li>
+    <li><strong>Strategic Insights:</strong> Proprietary analysis on potential, risks, and alignment with your portfolio.</li>
+    <li><strong>Negotiation Leverage:</strong> Timing and info to position you as a preferred buyer for favorable terms.</li>
+  </ul>
+  <p>Leverage my system to secure acquisitions delivering strategic value, operational synergies, and long-term growth without competing in crowded markets.</p>
+</section>
+
+<section>
+  <h2>For Sellers: Maximize Your Exit and Protect Your Interests</h2>
+  <ul>
+    <li><strong>Targeted Buyer Matching:</strong> Connect with buyers who meet your criteria and strategic interests.</li>
+    <li><strong>Expanded Reach:</strong> Exposure to hundreds of qualified, pre-vetted buyers nationwide.</li>
+    <li><strong>Confidential Marketing:</strong> Discreet presentation preserving operational continuity and morale.</li>
+    <li><strong>Value Maximization:</strong> Data-driven insights to negotiate the best terms and highest value.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>A Proven Track Record of Results</h2>
+  <ul>
+    <li>Facilitated acquisitions for private equity and holding companies across tech, healthcare, manufacturing, and services.</li>
+    <li>Helped business owners achieve premium valuations by connecting with the right buyers.</li>
+    <li>Delivered actionable insights enabling decisive, efficient high-value acquisitions.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>How My Process Works</h2>
+  <ol>
+    <li><strong>Discovery & Criteria Assessment:</strong> Tailored strategy to identify acquisition or sale parameters.</li>
+    <li><strong>Data-Driven Sourcing:</strong> 14-hour nightly research to find relevant opportunities or buyers.</li>
+    <li><strong>Proprietary Filtering:</strong> Distilling large datasets into actionable insights.</li>
+    <li><strong>Confidential Outreach:</strong> Professional connection respecting confidentiality.</li>
+    <li><strong>Negotiation & Closing Support:</strong> Strategic guidance for favorable terms and minimized risk.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Your Strategic Advantage</h2>
+  <ul>
+    <li>Deep industry deal-making expertise.</li>
+    <li>Access to exclusive off-market opportunities.</li>
+    <li>Actionable, data-driven insights.</li>
+    <li>Connections to motivated professionals and decision-makers.</li>
+  </ul>
+  <p>Whether acquiring, selling, or exploring strategic alternatives, my approach gives you a measurable competitive advantage.</p>
+</section>
+
+<section class="cta">
+  <h2>Ready to Unlock Your Next Opportunity?</h2>
+  <p>Access pre-market deals, maximize your business value, and gain insights that put you ahead of the competition.</p>
+  <a class="btn-contact" href="mailto:your@email.com">Schedule a Confidential Consultation</a>
+</section>
+
+<section>
+  <h2>Buy-Side Acquisition Sourcing & Deal Access Services</h2>
+  <p>Curated. Confidential. Targeted. Designed for private investors, search funds, and strategic acquirers seeking real business opportunities, not outdated listings.</p>
+  <ul>
+    <li>Access to verified off-market and brokered opportunities</li>
+    <li>Detailed teaser summaries tailored to your acquisition criteria</li>
+    <li>Introductions to sellers or their reps once qualified</li>
+    <li>Optional NDA management for confidentiality</li>
+    <li>Priority alerts for new opportunities matching your mandate</li>
+  </ul>
+  <h3>Payment Options</h3>
+  <p>Secure online payments via Stripe, PayPal, or invoice (QuickBooks/Wave). Receipts issued immediately after payment.</p>
+  <h3>Process Overview</h3>
+  <ol>
+    <li>Share your criteria (industry, size, geography, deal type).</li>
+    <li>Review teaser listings tailored to your focus.</li>
+    <li>Select an opportunity by internal ID #.</li>
+    <li>Activate access via preferred payment option.</li>
+    <li>Receive full seller details and begin discussions.</li>
+  </ol>
+  <h3>Why Work With Us</h3>
+  <ul>
+    <li>Focused sourcing filtering hundreds of listings to true fits.</li>
+    <li>Confidentiality protecting buyer and seller identities.</li>
+    <li>Flexibility: pay only for what you need.</li>
+    <li>Speedy matches faster than traditional brokers.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <p><strong>Your Name</strong><br />
+     Your Company Name<br />
+     📧 <a href="mailto:your@email.com">your@email.com</a><br />
+     📞 Your Phone Number<br />
+     🌐 <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn Profile or Website</a>
+  </p>
+</section>
+
+</main>
+
 <footer>
-    <p>Contact: [Your Name] | [Your Company Name]</p>
-    <p>Email: <a href="mailto:your@email.com">your@email.com</a> | Phone: [Your phone number]</p>
-    <p>Website/LinkedIn: <a href="[website or LinkedIn link]">[website or LinkedIn link]</a></p>
+  &copy; 2024 Your Company Name. All rights reserved.
 </footer>
-
-<script>
-    // Section fade-in on scroll
-    const sections = document.querySelectorAll('section, h2');
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if(entry.isIntersecting){
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.2 });
-
-    sections.forEach(section => observer.observe(section));
-</script>
 
 </body>
 </html>
