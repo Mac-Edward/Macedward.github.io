@@ -7,9 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   /* Global Styles */
-  html {
-    scroll-behavior: smooth;
-  }
+  html { scroll-behavior: smooth; }
   body {
     font-family: 'Inter', sans-serif;
     margin: 0;
@@ -19,7 +17,8 @@
     line-height: 1.6;
     overflow-x: hidden;
   }
-  a { text-decoration: none; color: inherit; }
+  a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
+  a:hover { color: #007acc; }
   img { max-width: 100%; display: block; }
 
   /* Navigation */
@@ -31,9 +30,7 @@
     z-index: 1000;
     transition: background 0.3s;
   }
-  nav.scrolled {
-    background: rgba(255,255,255,1);
-  }
+  nav.scrolled { background: rgba(255,255,255,1); }
   nav ul {
     display: flex;
     justify-content: center;
@@ -43,8 +40,7 @@
     gap: 2rem;
   }
   nav ul li { font-weight: 600; }
-  nav ul li a { transition: color 0.3s; }
-  nav ul li a:hover { color: #007acc; }
+  nav ul li a:hover { color: #00bfff; }
 
   /* Hero Section with Parallax */
   header.hero {
@@ -70,12 +66,16 @@
     font-weight: 700;
     margin: 0;
     max-width: 900px;
+    opacity: 0; transform: translateY(50px);
+    transition: all 1s ease-out;
   }
   header.hero p {
     font-size: 1.25rem;
     margin-top: 1rem;
     font-style: italic;
     font-weight: 400;
+    opacity: 0; transform: translateY(50px);
+    transition: all 1s ease-out 0.2s;
   }
   .btn-contact {
     display: inline-block;
@@ -87,11 +87,10 @@
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0,123,204,0.4);
     transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0; transform: translateY(50px);
+    transition: all 1s ease-out 0.4s;
   }
-  .btn-contact:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0,123,204,0.6);
-  }
+  .btn-contact:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,123,204,0.6); }
 
   /* Sections */
   section {
@@ -108,6 +107,9 @@
     font-weight: 700;
     margin-bottom: 1.5rem;
     position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
   section h2::after {
     content: '';
@@ -115,12 +117,29 @@
     width: 60px;
     height: 4px;
     background: linear-gradient(90deg,#007acc,#00bfff);
-    margin-top: 0.5rem;
+    margin-left: auto;
     border-radius: 2px;
   }
   section p, section li { font-size: 1.05rem; margin-bottom: 1rem; }
   ul, ol { margin-left: 1.5rem; }
-  li { margin-bottom: 0.75rem; }
+  li {
+    margin-bottom: 0.75rem;
+    transition: transform 0.3s, color 0.3s;
+    position: relative;
+    padding-left: 1rem;
+  }
+  li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #007acc;
+    font-weight: bold;
+    transition: transform 0.3s;
+  }
+  li:hover {
+    transform: translateX(5px);
+    color: #007acc;
+  }
 
   /* CTA Section */
   .cta {
@@ -129,6 +148,7 @@
     text-align: center;
     padding: 6rem 1rem;
     clip-path: polygon(0 0,100% 0,100% 100%,0 90%);
+    position: relative;
   }
   .cta h2 { font-size: 2rem; margin-bottom: 1rem; }
   .cta p { font-size: 1.2rem; margin-bottom: 2rem; }
@@ -235,7 +255,7 @@
 
 <script>
   // Fade-in sections on scroll
-  const sections = document.querySelectorAll('section');
+  const sections = document.querySelectorAll('section, header.hero h1, header.hero p, .btn-contact');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if(entry.isIntersecting){
