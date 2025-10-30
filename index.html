@@ -9,12 +9,13 @@
 
   /* Responsive Vimeo video section */
 #video-section {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  padding: 5rem 0; /* remove side padding */
-  background: #fff; /* optional: add a background color if desired */
-  text-align: center;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
+.cta {
+  margin-top: 6rem;
+}
+
 
 .video-container {
   width: 100%;
@@ -352,6 +353,33 @@ footer {
   header.hero h1{font-size:2.2rem;}
   .stats{flex-direction:column;align-items:center;}
 }
+
+
+  /* === Full-width overrides === */
+#video-section {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: 5rem 0;
+  background: #fff;
+  text-align: center;
+}
+
+#video-section .video-container {
+  width: 100%;
+  max-width: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.cta {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: 6rem 1rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+  text-align: center;
+}
+
 </style>
 </head>
 <body>
