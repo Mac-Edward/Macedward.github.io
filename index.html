@@ -6,7 +6,6 @@
 <title>Silicon Valley M&A Advisory | Unlock Market Opportunities</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-  /* === VARIABLES === */
   :root {
     --primary: #007aff;
     --secondary: #ff2d55;
@@ -27,187 +26,73 @@
     overflow-x: hidden;
   }
 
-  /* === NAVIGATION === */
   nav {
-    position: fixed;
-    top: 0; left: 0; width: 100%;
+    position: fixed; top: 0; left: 0; width: 100%;
     background: rgba(255,255,255,0.8);
     backdrop-filter: blur(var(--glass-blur));
     box-shadow: var(--shadow-light);
     z-index: 1000;
   }
-  .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
+  .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; padding: 0 1rem; }
   .logo { font-weight: 700; font-size: 1.2rem; color: var(--text-dark); }
   .nav-links { display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; }
-  .nav-links li a {
-    font-weight: 600;
-    color: var(--text-dark);
-    text-decoration: none;
-    transition: color 0.3s;
-  }
+  .nav-links li a { font-weight: 600; color: var(--text-dark); text-decoration: none; transition: color 0.3s; }
   .nav-links li a:hover { color: var(--primary); }
-
-  .menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--text-dark);
-    font-size: 1.8rem;
-    cursor: pointer;
-  }
+  .menu-toggle { display: none; background: none; border: none; color: var(--text-dark); font-size: 1.8rem; cursor: pointer; }
   @media (max-width: 768px) {
     .menu-toggle { display: block; }
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      background: rgba(255,255,255,0.8);
-      backdrop-filter: blur(var(--glass-blur));
-      position: absolute;
-      top: 60px; left: 0;
-      width: 100%;
-      padding: 1rem 0;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
+    .nav-links { display: none; flex-direction: column; align-items: center; background: rgba(255,255,255,0.8); backdrop-filter: blur(var(--glass-blur)); position: absolute; top: 60px; left: 0; width: 100%; padding: 1rem 0; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
     .nav-links.show { display: flex; }
     .nav-links li a { font-size: 1.2rem; padding: 0.75rem 0; }
   }
 
-  /* === HERO === */
   header.hero {
     min-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
     text-align: center;
-    padding: 0 1rem;
+    padding: 80px 1rem 0 1rem;
     background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(250,250,250,0.95) 100%),
                 url('https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
   }
   header.hero h1 {
-    font-size: 3rem;
-    font-weight: 700;
+    font-size: 3rem; font-weight: 700;
     background: linear-gradient(90deg, var(--primary), var(--secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    opacity: 0;
-    transform: translateY(20px);
+    opacity: 0; transform: translateY(20px);
     animation: fadeUp 1s forwards 0.3s;
   }
   header.hero p {
-    font-size: 1.2rem;
-    opacity: 0;
-    transform: translateY(20px);
+    font-size: 1.2rem; opacity: 0; transform: translateY(20px);
     animation: fadeUp 1s forwards 0.6s;
   }
   @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
 
   .btn-primary {
-    margin-top: 2rem;
-    padding: 1rem 2rem;
+    margin-top: 2rem; padding: 1rem 2rem;
     background: linear-gradient(90deg, var(--primary), var(--secondary));
-    border: none;
-    color: #fff;
-    border-radius: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 10px 25px rgba(0,122,255,0.4);
+    border: none; color: #fff; border-radius: 12px; font-weight: 600;
+    cursor: pointer; box-shadow: 0 10px 25px rgba(0,122,255,0.4);
     transition: transform 0.3s, box-shadow 0.3s;
   }
-  .btn-primary:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 0 25px rgba(0,122,255,0.6);
-  }
+  .btn-primary:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 0 25px rgba(0,122,255,0.6); }
 
-  /* === SECTIONS === */
-  section {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 6rem 1rem;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 1s ease-out;
-  }
+  section { max-width: 1100px; margin: 0 auto; padding: 6rem 1rem; opacity: 0; transform: translateY(40px); transition: all 1s ease-out; }
   section.visible { opacity: 1; transform: translateY(0); }
-  section h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    background: linear-gradient(90deg, var(--primary), var(--secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+  section h2 { text-align: center; font-size: 2rem; margin-bottom: 1.5rem; background: linear-gradient(90deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
   section p, section li { font-size: 1.05rem; color: #4a4a4a; }
 
-  /* === CARDS === */
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-  }
-  .card {
-    background: var(--card-bg);
-    border-radius: 16px;
-    padding: 2rem;
-    box-shadow: var(--shadow-light);
-    transition: transform 0.4s, box-shadow 0.4s;
-  }
-  .card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-  }
-  .card .more-info {
-    color: #555;
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.5s ease;
-    font-size: 0.95rem;
-    margin-top: 1rem;
-    line-height: 1.5;
-  }
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; }
+  .card { background: var(--card-bg); border-radius: 16px; padding: 2rem; box-shadow: var(--shadow-light); transition: transform 0.4s, box-shadow 0.4s; }
+  .card:hover { transform: scale(1.02); box-shadow: 0 15px 30px rgba(0,0,0,0.12); }
+  .card .more-info { color: #555; opacity: 0; max-height: 0; overflow: hidden; transition: all 0.5s ease; font-size: 0.95rem; margin-top: 1rem; line-height: 1.5; }
   .card:hover .more-info { opacity: 1; max-height: 500px; }
 
-  /* === VIDEO SECTION === */
-  .video-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    max-width: 900px;
-    margin: 2rem auto;
-    overflow: hidden;
-    border-radius: 16px;
-    box-shadow: var(--shadow-light);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .video-container iframe {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-  }
-  .video-container:hover {
-    box-shadow: 0 0 25px rgba(0,122,255,0.3);
-    transform: scale(1.01);
-  }
+  .video-container { position: relative; padding-bottom: 56.25%; height: 0; max-width: 900px; margin: 2rem auto; overflow: hidden; border-radius: 16px; box-shadow: var(--shadow-light); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+  .video-container:hover { box-shadow: 0 0 25px rgba(0,122,255,0.3); transform: scale(1.01); }
 
-  /* === FOOTER === */
-  footer {
-    background: #f2f2f7;
-    color: #666;
-    text-align: center;
-    padding: 2rem 1rem;
-  }
+  footer { background: #f2f2f7; color: #666; text-align: center; padding: 2rem 1rem; }
 </style>
 </head>
 <body>
@@ -263,6 +148,15 @@
   const toggle = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
   toggle.addEventListener('click', () => navLinks.classList.toggle('show'));
+
+  // Fade in sections on scroll
+  const sections = document.querySelectorAll('section');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  sections.forEach(section => observer.observe(section));
 </script>
 
 </body>
