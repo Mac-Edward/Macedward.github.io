@@ -9,16 +9,19 @@
 
   /* Responsive Vimeo video section */
 #video-section {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  text-align: center;
+  padding: 5rem 1rem;
 }
-.cta {
-  margin-top: 6rem;
-}
-
 
 .video-container {
-  width: 100%;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  max-width: 900px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .video-container iframe {
@@ -118,11 +121,11 @@ body {
   line-height: 1.6;
 }
 
+
 /* Navigation */
 nav {
   position:fixed;top:0;left:0;width:100%;
   background: rgba(255,255,255,0.9);  /* semi-transparent white */
-  box-shadow: var(--shadow);
   backdrop-filter:blur(12px);
   z-index:1000;
   box-shadow:var(--shadow);
@@ -281,10 +284,10 @@ section p, section li { font-size:1.05rem; color:#333; }
   margin-top:3rem;
 }
 .card {
-  background: var(--card-bg);
+  background: var(--card-bg); /* white */
   border-radius:12px;
   padding:2rem;
-  box-shadow:0 5px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1); /* softer shadow */
   transition:transform 0.4s, box-shadow 0.4s;
   perspective:800px;
 }
@@ -326,14 +329,12 @@ section p, section li { font-size:1.05rem; color:#333; }
 
 /* CTA --> THIS IS THE BLUE BANNER AT THE BOTTOM*/
 .cta {
-  text-align:center;
-  padding:6rem 1rem;
-  background:linear-gradient(135deg,var(--primary),var(--secondary));
-  color:#fff;
   width: 100vw;                  /* span full viewport width */
   margin-left: calc(50% - 50vw); /* pull it out of the centered container */
-}
-
+  padding: 6rem 1rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+  text-align: center;
 }
 .cta h2 {font-size:2rem;}
 .cta p {font-size:1.2rem;margin-top:1rem;}
@@ -344,7 +345,7 @@ section p, section li { font-size:1.05rem; color:#333; }
 footer {
   text-align:center;
   padding:2rem 1rem;
-  color:#999;
+  color:#333;
   background:#f1f1f1;
 }
 
@@ -353,33 +354,6 @@ footer {
   header.hero h1{font-size:2.2rem;}
   .stats{flex-direction:column;align-items:center;}
 }
-
-
-  /* === Full-width overrides === */
-#video-section {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  padding: 5rem 0;
-  background: #fff;
-  text-align: center;
-}
-
-#video-section .video-container {
-  width: 100%;
-  max-width: none;
-  border-radius: 0;
-  box-shadow: none;
-}
-
-.cta {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  padding: 6rem 1rem;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: #fff;
-  text-align: center;
-}
-
 </style>
 </head>
 <body>
