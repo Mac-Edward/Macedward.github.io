@@ -336,7 +336,14 @@ section p, section li { font-size:1.05rem; color:#333; }
   color: #fff;
   text-align: center;
 }
-.cta h2 {font-size:2rem;color: #fff; /* softer, slightly darker white-blue tone */}
+.cta h2 {
+  font-size: 2rem;
+  color: #f9fbff; /* bright white text */
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  background: none; /* remove gradient text background */
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); /* optional for better contrast */
+}
 .cta p {font-size:1.2rem;margin-top:1rem;}
 .cta .btn-primary {background:#fff;color:#000;box-shadow:none;}
 .cta .btn-primary:hover {background:var(--bg-dark);color:#fff;}
