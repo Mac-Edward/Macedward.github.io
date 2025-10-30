@@ -9,19 +9,17 @@
 
   /* Responsive Vimeo video section */
 #video-section {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: 5rem 0; /* remove side padding */
+  background: #fff; /* optional: add a background color if desired */
   text-align: center;
-  padding: 5rem 1rem;
 }
 
 .video-container {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  height: 0;
-  max-width: 900px;
-  margin: 2rem auto;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  border-radius: 0; /* optional: removes rounded corners for full bleed */
+  box-shadow: none; /* optional: remove drop shadow for clean edges */
 }
 
 .video-container iframe {
@@ -327,12 +325,16 @@ section p, section li { font-size:1.05rem; color:#333; }
   color:var(--primary);
 }
 
-/* CTA */
+/* CTA --> THIS IS THE BLUE BANNER AT THE BOTTOM*/
 .cta {
   text-align:center;
   padding:6rem 1rem;
   background:linear-gradient(135deg,var(--primary),var(--secondary));
   color:#fff;
+  width: 100vw;                  /* span full viewport width */
+  margin-left: calc(50% - 50vw); /* pull it out of the centered container */
+}
+
 }
 .cta h2 {font-size:2rem;}
 .cta p {font-size:1.2rem;margin-top:1rem;}
