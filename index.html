@@ -6,158 +6,390 @@
 <title>Silicon Valley M&A Advisory | Unlock Market Opportunities</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --primary: #007aff;
-    --secondary: #ff2d55;
-    --bg-light: #f9f9fb;
-    --card-bg: rgba(255,255,255,0.9);
-    --text-dark: #1c1c1e;
-    --shadow-light: 0 10px 30px rgba(0,0,0,0.08);
-    --glass-blur: 12px;
+
+/* ===== LIGHT MODE COLOR VARIABLES ===== */
+:root {
+  --primary: #0077ff;
+  --secondary: #6a5acd;
+  --bg-light: #f9f9f9;
+  --card-bg: #ffffff;
+  --text-dark: #1a1a1a;
+  --text-muted: #555555;
+  --shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+html { scroll-behavior:smooth; }
+body {
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:var(--bg-light);
+  color:var(--text-dark);
+  overflow-x:hidden;
+  line-height:1.6;
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  background:rgba(255,255,255,0.95);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+  box-shadow:var(--shadow);
+  transition:background 0.3s ease;
+}
+
+nav ul {
+  display:flex;
+  justify-content:center;
+  gap:2rem;
+  padding:1rem 0;
+  margin:0;
+  list-style:none;
+}
+nav ul li a {
+  font-weight:600;
+  color:var(--text-dark);
+  transition:color 0.3s;
+}
+nav ul li a:hover { color:var(--primary); }
+
+/* Responsive nav container */
+.nav-container {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 1rem;
+}
+
+.logo {
+  font-weight:700;
+  font-size:1.2rem;
+  color: var(--text-dark);
+}
+
+.menu-toggle {
+  display:none;
+  background:none;
+  border:none;
+  color: var(--text-dark);
+  font-size:1.8rem;
+  cursor:pointer;
+}
+
+.nav-links {
+  display:flex;
+  gap:2rem;
+  list-style:none;
+  margin:0;
+  padding:1rem 0;
+}
+
+@media (max-width:768px) {
+  .menu-toggle { display:block; }
+  .nav-links {
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    background: rgba(255,255,255,0.98);
+    position:absolute;
+    top:60px;
+    left:0;
+    width:100%;
+    padding:1rem 0;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+    z-index:999;
   }
-
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: var(--bg-light);
-    color: var(--text-dark);
-    line-height: 1.6;
-    overflow-x: hidden;
+  .nav-links.show { display:flex; }
+  .nav-links li a {
+    font-size:1.2rem;
+    padding:0.75rem 0;
   }
+}
 
-  nav {
-    position: fixed; top: 0; left: 0; width: 100%;
-    background: rgba(255,255,255,0.8);
-    backdrop-filter: blur(var(--glass-blur));
-    box-shadow: var(--shadow-light);
-    z-index: 1000;
-  }
-  .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; padding: 0 1rem; }
-  .logo { font-weight: 700; font-size: 1.2rem; color: var(--text-dark); }
-  .nav-links { display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; }
-  .nav-links li a { font-weight: 600; color: var(--text-dark); text-decoration: none; transition: color 0.3s; }
-  .nav-links li a:hover { color: var(--primary); }
-  .menu-toggle { display: none; background: none; border: none; color: var(--text-dark); font-size: 1.8rem; cursor: pointer; }
-  @media (max-width: 768px) {
-    .menu-toggle { display: block; }
-    .nav-links { display: none; flex-direction: column; align-items: center; background: rgba(255,255,255,0.8); backdrop-filter: blur(var(--glass-blur)); position: absolute; top: 60px; left: 0; width: 100%; padding: 1rem 0; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-    .nav-links.show { display: flex; }
-    .nav-links li a { font-size: 1.2rem; padding: 0.75rem 0; }
-  }
+/* ===== HERO SECTION ===== */
+header.hero {
+  min-height:90vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:0 1rem;
+  background:linear-gradient(180deg,rgba(255,255,255,0.6) 0%,rgba(245,245,245,0.95) 100%),
+             url('https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1950&q=80') center/cover;
+  position:relative;
+}
+header.hero h1 {
+  font-size:3rem;
+  font-weight:700;
+  background:linear-gradient(90deg,var(--primary),var(--secondary));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  opacity:0;
+  animation:fadeUp 1s forwards 0.3s;
+}
+header.hero p {
+  font-size:1.2rem;
+  opacity:0;
+  animation:fadeUp 1s forwards 0.6s;
+}
+@keyframes fadeUp { to{opacity:1;transform:translateY(0);} }
 
-  header.hero {
-    min-height: 90vh;
-    display: flex; flex-direction: column; justify-content: center; align-items: center;
-    text-align: center;
-    padding: 80px 1rem 0 1rem;
-    background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(250,250,250,0.95) 100%),
-                url('https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
-  }
-  header.hero h1 {
-    font-size: 3rem; font-weight: 700;
-    background: linear-gradient(90deg, var(--primary), var(--secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    opacity: 0; transform: translateY(20px);
-    animation: fadeUp 1s forwards 0.3s;
-  }
-  header.hero p {
-    font-size: 1.2rem; opacity: 0; transform: translateY(20px);
-    animation: fadeUp 1s forwards 0.6s;
-  }
-  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+.btn-primary {
+  margin-top:2rem;
+  padding:1rem 2rem;
+  background:linear-gradient(90deg,var(--primary),var(--secondary));
+  border:none;
+  color:#fff;
+  border-radius:8px;
+  font-weight:600;
+  cursor:pointer;
+  box-shadow:0 0 15px rgba(0,119,255,0.4);
+  transition:transform 0.3s, box-shadow 0.3s;
+}
+.btn-primary:hover {
+  transform:translateY(-3px) scale(1.02);
+  box-shadow:0 0 25px rgba(0,119,255,0.6);
+}
 
-  .btn-primary {
-    margin-top: 2rem; padding: 1rem 2rem;
-    background: linear-gradient(90deg, var(--primary), var(--secondary));
-    border: none; color: #fff; border-radius: 12px; font-weight: 600;
-    cursor: pointer; box-shadow: 0 10px 25px rgba(0,122,255,0.4);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  .btn-primary:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 0 25px rgba(0,122,255,0.6); }
+/* ===== VIDEO SECTION ===== */
+#video-section {
+  text-align:center;
+  padding:5rem 1rem;
+}
 
-  section { max-width: 1100px; margin: 0 auto; padding: 6rem 1rem; opacity: 0; transform: translateY(40px); transition: all 1s ease-out; }
-  section.visible { opacity: 1; transform: translateY(0); }
-  section h2 { text-align: center; font-size: 2rem; margin-bottom: 1.5rem; background: linear-gradient(90deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-  section p, section li { font-size: 1.05rem; color: #4a4a4a; }
+.video-container {
+  position:relative;
+  padding-bottom:56.25%;
+  height:0;
+  max-width:900px;
+  margin:2rem auto;
+  overflow:hidden;
+  border-radius:12px;
+  box-shadow:var(--shadow);
+}
 
-  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; }
-  .card { background: var(--card-bg); border-radius: 16px; padding: 2rem; box-shadow: var(--shadow-light); transition: transform 0.4s, box-shadow 0.4s; }
-  .card:hover { transform: scale(1.02); box-shadow: 0 15px 30px rgba(0,0,0,0.12); }
-  .card .more-info { color: #555; opacity: 0; max-height: 0; overflow: hidden; transition: all 0.5s ease; font-size: 0.95rem; margin-top: 1rem; line-height: 1.5; }
-  .card:hover .more-info { opacity: 1; max-height: 500px; }
+.video-container iframe {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
 
-  .video-container { position: relative; padding-bottom: 56.25%; height: 0; max-width: 900px; margin: 2rem auto; overflow: hidden; border-radius: 16px; box-shadow: var(--shadow-light); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-  .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-  .video-container:hover { box-shadow: 0 0 25px rgba(0,122,255,0.3); transform: scale(1.01); }
+.video-container:hover {
+  box-shadow:0 0 25px rgba(0,119,255,0.3);
+  transform:scale(1.01);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-  footer { background: #f2f2f7; color: #666; text-align: center; padding: 2rem 1rem; }
-</style>
-</head>
-<body>
+/* ===== SECTIONS ===== */
+section {
+  max-width:1100px;
+  margin:0 auto;
+  padding:6rem 1rem;
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 1s ease-out;
+}
+section.visible { opacity:1; transform:translateY(0); }
+section h2 {
+  text-align:center;
+  font-size:2rem;
+  margin-bottom:1.5rem;
+  background:linear-gradient(90deg,var(--primary),var(--secondary));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+section p, section li { font-size:1.05rem; color:var(--text-muted); }
 
-<nav>
-  <div class="nav-container">
-    <div class="logo">M&A Advisory</div>
-    <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#video-section">Insights</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <button class="menu-toggle">&#9776;</button>
-  </div>
-</nav>
+/* ===== CARD GRID ===== */
+.card-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:2rem;
+  margin-top:3rem;
+}
+.card {
+  background:var(--card-bg);
+  border-radius:12px;
+  padding:2rem;
+  box-shadow:var(--shadow);
+  transition:transform 0.4s, box-shadow 0.4s;
+  perspective:800px;
+}
+.card:hover {
+  transform:perspective(800px) rotateY(8deg) rotateX(4deg) scale(1.02);
+  box-shadow:0 8px 25px rgba(0,119,255,0.2);
+}
+.card .more-info {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  color: #555;
+  font-size: 0.95rem;
+  margin-top: 1rem;
+  line-height: 1.5;
+}
+.card:hover .more-info {
+  opacity: 1;
+  max-height: 500px;
+}
 
-<header class="hero">
-  <h1>Unlock Market Opportunities</h1>
-  <p>Silicon Valley M&A Advisory for tech innovators and investors.</p>
-  <button class="btn-primary">Get Started</button>
-</header>
+/* ===== STATS ===== */
+.stats {
+  display:flex;
+  justify-content:space-around;
+  margin-top:3rem;
+  flex-wrap:wrap;
+  gap:2rem;
+}
+.counter {
+  font-size:2rem;
+  font-weight:700;
+  color:var(--primary);
+}
 
-<section id="services">
-  <h2>Our Services</h2>
-  <div class="card-grid">
-    <div class="card">
-      <h3>Strategic Advisory</h3>
-      <p class="more-info">We provide end-to-end advisory for tech mergers and acquisitions.</p>
-    </div>
-    <div class="card">
-      <h3>Market Analysis</h3>
-      <p class="more-info">Data-driven insights to identify high-growth opportunities.</p>
-    </div>
-    <div class="card">
-      <h3>Investment Planning</h3>
-      <p class="more-info">Optimize your portfolio and M&A strategy with expert guidance.</p>
-    </div>
-  </div>
-</section>
+/* ===== CTA ===== */
+.cta {
+  text-align:center;
+  padding:6rem 1rem;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  color:#fff;
+}
+.cta h2{font-size:2rem;}
+.cta p{font-size:1.2rem;margin-top:1rem;}
+.cta .btn-primary{background:#fff;color:#000;box-shadow:none;}
+.cta .btn-primary:hover{background:#0077ff;color:#fff;}
 
-<section id="video-section">
-  <h2>Insights & Webinars</h2>
-  <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-  </div>
-</section>
+/* ===== FOOTER ===== */
+footer {
+  text-align:center;
+  padding:2rem 1rem;
+  color:var(--text-muted);
+  background:#eaeaea;
+}
 
-<footer>
-  &copy; 2025 Silicon Valley M&A Advisory. All rights reserved.
-</footer>
+/* ===== VIDEO CAROUSEL ===== */
+.carousel {
+  position: relative;
+  max-width:900px;
+  margin:3rem auto;
+  overflow:hidden;
+  border-radius:12px;
+  box-shadow:var(--shadow);
+}
 
-<script>
-  const toggle = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  toggle.addEventListener('click', () => navLinks.classList.toggle('show'));
+.carousel-track {
+  display:flex;
+  transition:transform 0.5s ease-in-out;
+}
 
-  // Fade in sections on scroll
-  const sections = document.querySelectorAll('section');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, { threshold: 0.1 });
-  sections.forEach(section => observer.observe(section));
-</script>
+.video-slide {
+  min-width:100%;
+  transition:opacity 0.5s ease;
+}
 
-</body>
-</html>
+.video-slide iframe {
+  width:100%;
+  height:500px;
+  border:none;
+  display:block;
+}
+
+.carousel-btn {
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background: rgba(0,119,255,0.2);
+  border:none;
+  color:#fff;
+  font-size:2rem;
+  cursor:pointer;
+  padding:0.5rem 1rem;
+  border-radius:
+:root {
+  --primary: #00bfff;      /* keep vibrant blue */
+  --secondary: #8a2be2;    /* keep purple accent */
+  --bg-light: #f9f9f9;     /* light page background */
+  --card-bg: #ffffff;       /* cards white */
+  --text-dark: #1a1a1a;    /* primary text color */
+  --shadow: 0 10px 25px rgba(0,0,0,0.1);
+  --nav-bg: rgba(255, 255, 255, 0.9);
+  --link-hover: var(--primary);
+}
+
+body {
+  background: var(--bg-light);
+  color: var(--text-dark);
+}
+
+nav {
+  background: var(--nav-bg);
+  box-shadow: var(--shadow);
+}
+
+nav ul li a {
+  color: var(--text-dark);
+}
+
+nav ul li a:hover {
+  color: var(--link-hover);
+}
+
+header.hero {
+  background: linear-gradient(180deg, rgba(255,255,255,0.6) 0%, rgba(245,245,245,0.95) 100%),
+              url('https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1950&q=80') center/cover;
+  color: var(--text-dark);
+}
+
+header.hero h1 {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+header.hero p {
+  color: var(--text-dark);
+}
+
+.card {
+  background: var(--card-bg);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+  box-shadow: 0 8px 25px rgba(0,191,255,0.2);
+}
+
+section h2 {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+section p, section li {
+  color: #333;
+}
+
+.cta {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+}
+
+.cta .btn-primary {
+  background: #fff;
+  color: #000;
+}
+
+footer {
+  background: #f1f1f1;
+  color: #555;
+}
